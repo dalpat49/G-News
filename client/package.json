@@ -2,7 +2,7 @@
   "name": "news-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/",
+  "homepage": ".",
   "proxy":"https://g-news-qh78.onrender.com",
   "dependencies": {
     "@auth0/auth0-react": "^2.0.0",
