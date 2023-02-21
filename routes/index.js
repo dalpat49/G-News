@@ -119,11 +119,18 @@ route.use(
 
 
 
+if (process.env.NODE_ENV === "production") {
+    // Serve any static files
+    route.use(express.static(path.join(__dirname, "./client/build")));
+    // Handle React routing, return all requests to React app
+    route.get("*", function (req, res) {
+      res.sendFile(path.join(__dirname, "./client/build", "index.html"));
+    });
+  }
 
-
-route.get("/",(req,res)=>{
-    res.sendFile(path.join(__dirname,"../client/build/index.html"))
-})
+// route.get("/",(req,res)=>{
+//     res.sendFile(path.join(__dirname,"../client/build/index.html"))
+// })
 
 
 //gett all newss to user 
