@@ -14,7 +14,7 @@ export default function Buttons() {
   const [category, setCategory] = useState([]);
 
   const getCategories = () => {
-    axios.get("https://g-news-qh78.onrender.com//getAllCategories").then((res) => {
+    axios.get("https://g-news-qh78.onrender.com/getAllCategories").then((res) => {
       let datas = res.data;
       setCategory(datas);
     });
