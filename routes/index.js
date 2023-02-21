@@ -121,7 +121,9 @@ route.use(
 
 
 
-
+route.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname,"index.html"))
+})
 
 
 //gett all newss to user 
