@@ -152,7 +152,6 @@ export default function AdminNewsCategoryTable() {
                 const { success, msg } = result;
                 if (success == true) {
                     toast.success(msg)
-                    window.location.reload(false);
                 } else {
                     alert("data  not updated");
                 }
