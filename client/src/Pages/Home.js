@@ -72,7 +72,7 @@ export default function Home() {
         </div>
       </div>
       <div className="container-fluid bg-slate-300">
-        <Footer />
+        <Footer></Footer>
       </div>
     </>
   );

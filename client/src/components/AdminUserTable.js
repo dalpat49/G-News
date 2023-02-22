@@ -64,7 +64,7 @@ export default function AdminUserTable(props) {
     const newUserRegister = async (e) => {
         e.preventDefault();
         const data = await axios
-            .post("https://g-news-qh78.onrender.com/admin/newUserRegistration", user)
+            .post("/admin/newUserRegistration", user)
             .then((res) => {
                 console.log(res.data);
                 const newresult = res.data;
@@ -102,7 +102,7 @@ export default function AdminUserTable(props) {
     };
     //get all data
     const getData = async () => {
-        await axios.get("https://g-news-qh78.onrender.com/admin/allUsers").then((datas) => {
+        await axios.get("/admin/allUsers").then((datas) => {
             let allDatas = datas.data.getAllUsersData;
             setallUser(allDatas);
         });
@@ -111,7 +111,7 @@ export default function AdminUserTable(props) {
     //edit user data
     const handleEdit = async () => {
         axios
-            .put(`https://g-news-qh78.onrender.com/admin/editUserFromAdminPanel/${Id}`, EditUser)
+            .put(`/admin/editUserFromAdminPanel/${Id}`, EditUser)
             .then((response) => {
                 const result = response.data;
                 const { success, msg } = result;
@@ -132,7 +132,7 @@ export default function AdminUserTable(props) {
 
     //delet user data
     const handleDelete = () => {
-        const dltUrl = `https://g-news-qh78.onrender.com/admin/dltUserFromAdminPanel/${Id}`;
+        const dltUrl = `/admin/dltUserFromAdminPanel/${Id}`;
         axios
             .delete(dltUrl)
             .then((response) => {
@@ -153,7 +153,7 @@ export default function AdminUserTable(props) {
 
     const [statusColor, setstatusColor] = useState('green')
     const handleStatus =()=>{
-        axios.put(`https://g-news-qh78.onrender.com/admin/upadteUserStatus/${Id}`)
+        axios.put(`/admin/upadteUserStatus/${Id}`)
         .then((response)=>{
             const result = response.data;
             const {success,msg,color} = result;

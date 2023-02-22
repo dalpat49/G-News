@@ -20,7 +20,7 @@ export default function Contact() {
         setmessage({...message , [name]:value})
        }
        const sendMessage=()=>{
-        axios.post("https://g-news-qh78.onrender.com/getComplaintFromUser",message)
+        axios.post("/getComplaintFromUser",message)
         .then((res)=>{
           if(localStorage.getItem("id")){
             const result = res.data;

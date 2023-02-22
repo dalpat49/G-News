@@ -12,7 +12,7 @@ export default function SearchedResult() {
 
 //   console.log(params.id);
   const getSearchResult = () => {
-    axios.get("https://g-news-qh78.onrender.com/getAllNews").then((res) => {
+    axios.get("/getAllNews").then((res) => {
       const data = res.data;
     //   console.log(data);
       const allnews = data.filter((e) => {

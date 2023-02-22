@@ -7,11 +7,11 @@ export default function AdminDashboardNewsTable() {
     const navigate = useNavigate()
 
     const navigateToAllnews =()=>{
-        navigate("https://g-news-qh78.onrender.com/admin/allNews")
+        navigate("/admin/allNews")
     }
 
     const navigateToCategory =()=>{
-        navigate("https://g-news-qh78.onrender.com/admin/newsCategory")
+        navigate("/admin/newsCategory")
     }
 useEffect(()=>{
     getLatestNews();
@@ -19,7 +19,7 @@ useEffect(()=>{
 },[])
 
     const getLatestNews = ()=>{
-        axios.get("https://g-news-qh78.onrender.com/admin/getAllNewsFromAdminPanel")
+        axios.get("/admin/getAllNewsFromAdminPanel")
         .then((res)=>{
             const allLatestNews = res.data;
             const reverseNews = allLatestNews.reverse()
@@ -31,7 +31,7 @@ useEffect(()=>{
     }
 
     const getLatestCat = ()=>{
-        axios.get("https://g-news-qh78.onrender.com/admin/getAllTheNewsCategories")
+        axios.get("/admin/getAllTheNewsCategories")
         .then((res)=>{
             const getCat = res.data.getAllNewsCat
             const revesrseCat = getCat.reverse();

@@ -31,7 +31,7 @@ const [loggedIn, setLoggedIn] = useState(false);
 
 
        const logout =()=>{
-        axios.get("https://g-news-qh78.onrender.com/logout")
+        axios.get("/logout")
         .then((res)=>{
             const data = res.data;
             const {success} =  data

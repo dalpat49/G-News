@@ -23,7 +23,7 @@ export default function AdminDashboard(){
   },[])
 
   const getAllCount =()=>{
-    axios.get("https://g-news-qh78.onrender.com/admin/adminGetCount")
+    axios.get("/admin/adminGetCount")
     .then((res)=>{
       // const Cnews = 
        const newsCount = res.data.getNewsCount;

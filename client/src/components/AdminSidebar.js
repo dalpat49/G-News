@@ -5,7 +5,7 @@ import axios from 'axios';
 export default function AdminSidebar() {
   const navigate = useNavigate()
   const getLogout=()=>{
-    axios.get("https://g-news-qh78.onrender.com/admin/adminLogout")
+    axios.get("/admin/adminLogout")
     .then((res)=>{
       const result = res.data;
       const {success} = result;

@@ -10,7 +10,7 @@ export default function AdminAllNewsTable() {
   const [showModal, setShowModal] = useState(false);
   const [newsCategory, setNewsCategory] = useState([]);
 //   for statuis buttons
-  const Navigate =useNavigate()
+  const Navigate =useNavigate();
 
   const [user, setUser] = useState({
     title: "",
@@ -91,7 +91,7 @@ export default function AdminAllNewsTable() {
     data.append('author',user.author)
     data.append('newsImage',user.selectedFile)
 
-    axios.post("https://g-news-qh78.onrender.com/admin/addNewNewsFromAdminPanel",data )
+    axios.post("/admin/addNewNewsFromAdminPanel",data )
       .then((res) => {
         const newresult = res.data;
         const { success, msg } = newresult;
@@ -128,7 +128,7 @@ export default function AdminAllNewsTable() {
 
   //get all data
   const getData = async () => {
-    await axios.get("https://g-news-qh78.onrender.com/admin/getAllNewsFromAdminPanel").then((datas) => {
+    await axios.get("/admin/getAllNewsFromAdminPanel").then((datas) => {
       let allDatas = datas.data;
       setallUser(allDatas);
 
@@ -141,7 +141,7 @@ export default function AdminAllNewsTable() {
   }, []);
 
   const getCategories = () => {
-    axios.get("https://g-news-qh78.onrender.com/getAllCategories").then((res) => {
+    axios.get("/getAllCategories").then((res) => {
       let datas = res.data;
       setNewsCategory(datas);
     });
@@ -150,7 +150,7 @@ export default function AdminAllNewsTable() {
   //edit user data
   const handleEdit = async () => {
     axios
-      .post(`https://g-news-qh78.onrender.com/admin/updateNewsFromAdminPanel/${Id}`, EditUser)
+      .put(`/admin/updateNewsFromAdminPanel/${Id}`, EditUser)
       .then((response) => {
         const result = response.data;
         const { success, msg } = result;
@@ -169,7 +169,7 @@ export default function AdminAllNewsTable() {
 
   //delet user data
   const handleDelete = () => {
-    const dltUrl = `https://g-news-qh78.onrender.com/admin/dltNewsFromAdminPanel/${Id}`;
+    const dltUrl = `/admin/dltNewsFromAdminPanel/${Id}`;
     axios
       .delete(dltUrl)
       .then((response) => {
@@ -231,7 +231,7 @@ export default function AdminAllNewsTable() {
 
   const changeNewsStatus =()=>{
    
-      axios.put(`https://g-news-qh78.onrender.com/admin/changeNewsStatus/${Id}`)
+      axios.put(`/admin/changeNewsStatus/${Id}`)
       .then((response) => {
         const result = response.data;
         const { success, msg } = result;

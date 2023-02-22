@@ -40,7 +40,7 @@ export default function NewsDetail() {
         else{
             
             axios
-                .post(`https://g-news-qh78.onrender.com/getCommentByUser/${params.id}`, comment)
+                .post(`/getCommentByUser/${params.id}`, comment)
                 .then((response) => {
                     const result = response.data;
                     const { success, msg } = result;
@@ -68,7 +68,7 @@ export default function NewsDetail() {
 
 
     const getData =()=>{
-        axios.get("https://g-news-qh78.onrender.com/getAllNews").then((res) => {
+        axios.get("/getAllNews").then((res) => {
             const data = res.data;
             const newnews = data.filter((e)=>{
                 if(e._id === params.id)
@@ -101,7 +101,7 @@ export default function NewsDetail() {
         setLikeCount(likeCount + 1)
 
 
-        axios.put(`https://g-news-qh78.onrender.com/updateLikesForNews/${Id}`, { likes: likeCount })
+        axios.put(`/updateLikesForNews/${Id}`, { likes: likeCount })
             .then((res) => {
                 const result = res.data;
                 const { success, msg } = result;
@@ -128,7 +128,7 @@ export default function NewsDetail() {
 
     const handleDisLike = (e) => {
         setDislikeCount(dislikeCount + 1);
-        axios.put(`https://g-news-qh78.onrender.com/updateDislikesForNews/${Id}`, { dislike: dislikeCount })
+        axios.put(`/updateDislikesForNews/${Id}`, { dislike: dislikeCount })
             .then((res) => {
                 const result = res.data;
                 const { success, msg } = result;

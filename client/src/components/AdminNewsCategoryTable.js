@@ -59,7 +59,7 @@ export default function AdminNewsCategoryTable() {
     const newUserRegister = async (e) => {
         e.preventDefault();
         const data = await axios
-            .post("https://g-news-qh78.onrender.com/admin/addNewNewsCategory", user)
+            .post("/admin/addNewNewsCategory", user)
             .then((res) => {
                 console.log(res.data);
                 const newresult = res.data;
@@ -94,7 +94,7 @@ export default function AdminNewsCategoryTable() {
     };
     //get all data
     const getData = async () => {
-        await axios.get("https://g-news-qh78.onrender.com/admin/getAllTheNewsCategories").then((datas) => {
+        await axios.get("/admin/getAllTheNewsCategories").then((datas) => {
             let allDatas = datas.data.getAllNewsCat;
             setallUser(allDatas);
         });
@@ -103,7 +103,7 @@ export default function AdminNewsCategoryTable() {
     //edit user data
     const handleEdit = async () => {
         axios
-            .put(`https://g-news-qh78.onrender.com/admin/EditCategoryFromAdminPanel/${Id}`, EditUser)
+            .put(`/admin/EditCategoryFromAdminPanel/${Id}`, EditUser)
             .then((response) => {
                 const result = response.data;
                 const { success, msg } = result;
@@ -124,7 +124,7 @@ export default function AdminNewsCategoryTable() {
 
     //delet user data
     const handleDelete = () => {
-        const dltUrl = `https://g-news-qh78.onrender.com/admin/dltCategoryFromAdminPanel/${Id}`;
+        const dltUrl = `/admin/dltCategoryFromAdminPanel/${Id}`;
         axios
             .delete(dltUrl)
             .then((response) => {
@@ -144,7 +144,7 @@ export default function AdminNewsCategoryTable() {
 
     const handleStatus =async()=>{
     
-            const statusUrl =  `https://g-news-qh78.onrender.com/admin/changeStatusOfCategory/${Id}`;
+            const statusUrl =  `/admin/changeStatusOfCategory/${Id}`;
             console.log(statusUrl)
             await axios.put(statusUrl)
             .then((response) => {

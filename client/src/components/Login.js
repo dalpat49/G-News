@@ -23,7 +23,7 @@ export default function Login(){
 
     const checkLogin =(e)=>{
         // e.preventDefault()
-        axios.post("https://g-news-qh78.onrender.com/userLoginCheck",userData)
+        axios.post("/userLoginCheck",userData)
         .then((res)=>{
             const data = res.data;
             const {success,msg,id,userData} = data;

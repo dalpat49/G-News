@@ -25,7 +25,7 @@ export default function NewsSidebar({ allnews }) {
   const Subscribed = async (e) => {
     e.preventDefault();
     axios
-      .post("https://g-news-qh78.onrender.com/newsLetterSubscription", input)
+      .post("/newsLetterSubscription", input)
       .then((res) => {
         if(localStorage.getItem("id")){
         let result = res.data;
