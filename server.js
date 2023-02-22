@@ -26,6 +26,11 @@ app.use(function(req, res, next) {
 });
 
 app.use(cors())
+if(process.env.NODE_ENV ===  'production'){
+    app.get("/",(req,res)=>{
+        res.sendFile(path.join(__dirname , "./client/build/index.html"))
+    })
+}
 //routes
 app.use('/',route);
 
