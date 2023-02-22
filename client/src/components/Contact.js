@@ -11,6 +11,7 @@ export default function Contact() {
         email:"",
         message:""
        })
+       const [sending ,setSending]  = useState(false)
        let name,value;
 
        const handleChange =(e)=>{
@@ -20,6 +21,7 @@ export default function Contact() {
         setmessage({...message , [name]:value})
        }
        const sendMessage=()=>{
+         setSending(true)
         axios.post("/getComplaintFromUser",message)
         .then((res)=>{
           if(localStorage.getItem("id")){
@@ -32,6 +34,7 @@ export default function Contact() {
                     email:"",
                     message:""
                 })
+                setSending(false)
             }
           }
             else{
@@ -99,7 +102,7 @@ export default function Contact() {
                 className="uppercase text-sm font-bold tracking-wide bg-blue-900 text-gray-100 p-2 hover:bg-blue-500 rounded-lg w-full 
                       focus:outline-none focus:shadow-outline"
               >
-                Send Message
+                {sending  ?  "sending" : "Send Message"}
               </button>
             </div>
           </div>
