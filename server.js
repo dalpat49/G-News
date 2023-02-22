@@ -18,6 +18,9 @@ app.set(express.urlencoded({ extended: true }));
 //      next();
      
 //    });
+route.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "index.html"));
+  });
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -26,8 +29,7 @@ app.use(function(req, res, next) {
   });
 
     
-    
- 
+  
 
 //route
 app.use('/',route);
