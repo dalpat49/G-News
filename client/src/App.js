@@ -82,7 +82,7 @@ useEffect(()=>{
 
         <Route exact  path="/admin/adminHome" element={<AdminHome></AdminHome>} />
         <Route exact  path="/admin/users" element={<AdminUsers ></AdminUsers>} ></Route>
-        <Route exact  path="/admin/newsCategory" element={<AdminNewsCategrory />}/>
+        <Route exact  path="#/admin/newsCategory" element={<AdminNewsCategrory />}/>
          <Route exact  path="/admin/allNews" element={<AdminAllNews />} />
          <Route exact  path="/admin/adminProfile" element={<AdminProfile />} />
        
