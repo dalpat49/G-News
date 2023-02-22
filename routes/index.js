@@ -125,7 +125,7 @@ route.use(
 // })
 
 route.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
   });
 //gett all newss to user 
 route.get("/getAllNews",getAllnewstoUser);
