@@ -81,7 +81,6 @@ mongoose.connect(dburl,{
     route.use(bodyParser.json());
     route.use(express.urlencoded({ extended: true }));
     route.use(express.json())
-    route.use("./client/build",express.static(path.join(__dirname, './client/build')));
 route.use(cookieparser());
 
 
@@ -90,15 +89,7 @@ route.use(cookieparser());
 
     
     
-const securedPassword =async(password)=>{
-    try{
-    let hasedPassword = await bcrypt.hash(password,4)
-    return hasedPassword;
-    }
-    catch(err){
-        console.log(err)
-    }
-}
+
 
 route.use(
     session({
@@ -117,12 +108,6 @@ route.use(
 //     res.sendFile(path.join(__dirname,"index.html"))
 // })
 
-
-
-
-route.get("*",(req,res)=>{
-    res.sendFile(path.join(__dirname,"./client/build/index.html"))
-})
 
 
 
