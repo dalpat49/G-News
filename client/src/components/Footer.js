@@ -63,14 +63,14 @@ const [category,setcategory] =useState([])
             <div className="col-lg-3 col-md-6 mb-5">
                 <h5 className="mb-4 text-white text-uppercase font-weight-bold">Categories</h5>
                 <div className="m-n1">
-                  {category.map((cat)=>{
+                  {category  ?  category.map((cat)=>{
                     
                     <div key={cat._id}>
                       <Link to={`/getAllNewsByCategory/${cat.category_name}`} 
                      className="btn btn-sm btn-secondary m-1">{cat.category_name}</Link>
                      </div>
                     
-                  })}
+                  }):null}
                    
                 </div>
             </div>

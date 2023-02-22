@@ -18,7 +18,7 @@ export default function Home() {
 
  
   const fetchPopular = async () => {
-    axios.get(`https://g-news-qh78.onrender.com/getAllNews`).then((res) => {
+    axios.get(`/getAllNews`).then((res) => {
       const data = res.data;
       const newnews = data;
       getnews(data);
