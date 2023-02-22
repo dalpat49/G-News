@@ -81,7 +81,7 @@ mongoose.connect(dburl,{
     route.use(bodyParser.json());
     route.use(express.urlencoded({ extended: true }));
     route.use(express.json())
-    route.use("../client/build",express.static(path.join(__dirname, '../client/build')));
+    route.use("./client/build",express.static(path.join(__dirname, './client/build')));
 route.use(cookieparser());
 
 
@@ -120,9 +120,9 @@ route.use(
 
 
 
-// route.get("/",(req,res)=>{
-//     res.sendFile(path.join(__dirname,"../client/build/index.html"))
-// })
+route.get("*",(req,res)=>{
+    res.sendFile(path.join(__dirname,"./client/build/index.html"))
+})
 
 
 
