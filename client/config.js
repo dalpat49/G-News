@@ -1,4 +1,4 @@
-module.exports ={
+exports ={
     dev:{
         historyApiFallback:true
     }

@@ -3,7 +3,7 @@ import Register from "./components/Register";
 import Navbar from "./components/Navbar";
 import Buttons from "./components/Buttons";
 import Footer from "./components/Footer";
-import { HashRouter, Routes, Route,useNavigate, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route,useNavigate, Switch } from "react-router-dom";
 import Home from "./Pages/Home";
 import AdminHome from "./Pages/AdminHome";
 import AdminUsers from "./Pages/AdminUsers";
@@ -61,7 +61,8 @@ useEffect(()=>{
   return (
     <>
       <main>
-   <HashRouter >
+   
+<Routes>
   
     {/* user routes */}
    
@@ -81,7 +82,7 @@ useEffect(()=>{
 
         <Route exact  path="/admin/adminHome" element={<AdminHome></AdminHome>} />
         <Route exact  path="/admin/users" element={<AdminUsers ></AdminUsers>} ></Route>
-        <Route exact  path="/admin/newsCategory" element={<AdminNewsCategrory />}/>
+        <Route exact  path="#/admin/newsCategory" element={<AdminNewsCategrory />}/>
          <Route exact  path="/admin/allNews" element={<AdminAllNews />} />
          <Route exact  path="/admin/adminProfile" element={<AdminProfile />} />
        
@@ -89,7 +90,7 @@ useEffect(()=>{
       
 
 
-</HashRouter>
+</Routes>
       </main>
     </>
   );

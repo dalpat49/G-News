@@ -34,7 +34,8 @@ app.use(cors({
 
   if(process.env.NODE_ENV === "production") {
     app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "./client/build/index.html"));
+        res.sendFile(path.join(__dirname, "./client/build/index.html"),(err) => err && res.status(500).send(err));
+
       }); }
 
 //routes
