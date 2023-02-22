@@ -82,7 +82,7 @@ mongoose.connect(dburl,{
     route.use(express.urlencoded({ extended: true }));
     route.use(express.json())
 route.use(cookieparser());
-
+route.use(express.static("./client/build"))
 
 // route.use(cors());
     
