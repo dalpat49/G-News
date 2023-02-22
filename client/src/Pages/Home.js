@@ -13,24 +13,22 @@ import {useNavigate } from 'react-router-dom'
 
 
 export default function Home() {
-  const url = "getAllNews";
-  const navigate = useNavigate()
 
   const [news, getnews] = useState([]);
   const [loadNews,setLoadNews] = useState(6)
 
-  useEffect(() => {
-    fetchPopular();
-  }, []);
-
+ 
   const fetchPopular = async () => {
     axios.get("/getAllNews").then((res) => {
       const data = res.data;
       console.log(data)
-      const newnews = data.reverse()
-      getnews(newnews);
+      const newnews = data;
+      getnews(data);
     });
   };
+  useEffect(() => {
+    fetchPopular();
+  }, []);
 
 
   const loadMoreData = ()=>{
@@ -76,7 +74,7 @@ export default function Home() {
         </div>
       </div>
       <div className="container-fluid bg-slate-300">
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );
