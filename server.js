@@ -28,9 +28,7 @@ app.use(function(req, res, next) {
 app.use(cors({
     origin:["https://g-news-qh78.onrender.com"]
 }))
-app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-  });
+
 //routes
 app.use('/',route);
 
