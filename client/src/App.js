@@ -52,6 +52,10 @@ useEffect(()=>{
   if(!localStorage.getItem("AdminId")){
     navigate("/")
   }
+  else
+  {
+    navigate("admin/adminHome")
+  }
 
 },[])
 
