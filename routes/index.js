@@ -89,7 +89,7 @@ route.use(cookieparser());
 
     
     
-route.get('*', function (req, res) {
+route.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../client/build/static'));
   });
 

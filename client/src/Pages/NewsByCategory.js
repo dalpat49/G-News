@@ -124,7 +124,7 @@ let id;
   </div>
 </div>
 <div className="container-fluid bg-slate-300">
-  {/* <Footer /> */}
+  <Footer />
 </div>
 </>
     )
