@@ -18,17 +18,17 @@ app.set(express.urlencoded({ extended: true }));
 //      next();
      
 //    });
-app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
-  });
-  route.use("./client/build",express.static(path.join(__dirname, './client/build')));
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
-  });
+});
 
+route.use("./client/build",express.static(path.join(__dirname, './client/build')));
+app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  });
     
   
 
