@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { HashRouter } from "react-router-dom";
 
 export const url = process.env.react_url;
 console.log(url)
@@ -11,10 +10,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <StrictMode>
-    <HashRouter basename="/">
     
       <App />
-    </HashRouter>
     </StrictMode>
 
 );
