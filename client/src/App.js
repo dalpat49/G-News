@@ -52,23 +52,8 @@ useEffect(()=>{
   if(!localStorage.getItem("AdminId")){
     navigate("/")
   }
-  else{
-    navigate("/admin/adminHome")
-  }
+
 },[])
-// console.log(window.location.pathname)
-
-// useEffect(()=>{
-//   if(!localStorage.getItem("id")){
-//     // navigate("/")
-//     setUserLogin(false)
-//   }
-//   else
-//   {
-//     // navigate("/")
-//     setUserLogin(true)
-
-//   }
 
 
 // },[])   
@@ -110,5 +95,6 @@ useEffect(()=>{
     </>
   );
 }
+
 
 export default App;
