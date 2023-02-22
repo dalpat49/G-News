@@ -21,14 +21,14 @@ const onMouseLeave = (e) => {
   const getdata = async () => {
     axios
       .get(
-        "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=fe034bcdf85743ff848364c0f74e64ee",
+        "/getAllNews",
         {
           method: "GET",
         }
       )
       .then((res) => {
         const fNews = res.data;
-        setFeaturedNews(fNews.articles);
+        setFeaturedNews(fNews);
       });
   };
 
@@ -53,8 +53,8 @@ const onMouseLeave = (e) => {
                 {FeaturedNews ? FeaturedNews.map((news)=>{
                     return(
 <>
-                        <Link to={news.url} key={news} target="_blank" className="text-blue-700">
-                          {news.title + "  "} {"    "}
+                        <Link to={`newsDetail/${news._id}`} key={news._id} target="_blank" className="text-blue-700">
+                          {news.Title +"   "} {"    "}
                          <span className="ml-3"> ||</span>{" "}
                                                   </Link>{" "}
                 </>       
