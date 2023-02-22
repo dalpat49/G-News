@@ -25,12 +25,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use("./client/build", express.static(path.join(__dirname, './client/build')));
-app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
-  });
-    
-  
+
 //routes
 app.use('/',route);
 
