@@ -26,6 +26,7 @@ export default function Home() {
   const fetchPopular = async () => {
     axios.get("/getAllNews").then((res) => {
       const data = res.data;
+      console.log(data)
       const newnews = data.reverse()
       getnews(newnews);
     });
@@ -75,7 +76,7 @@ export default function Home() {
         </div>
       </div>
       <div className="container-fluid bg-slate-300">
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

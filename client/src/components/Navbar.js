@@ -117,7 +117,7 @@ const [loggedIn, setLoggedIn] = useState(false);
             </div>
             
             <SearchBar></SearchBar>
-            <Buttons></Buttons>    
+            {/* <Buttons></Buttons>     */}
            
             <Outlet />
       
