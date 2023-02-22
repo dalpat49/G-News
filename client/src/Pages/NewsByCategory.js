@@ -27,7 +27,7 @@ export default function NewsByCategory (){
             window.scrollTo(0, 0)
        
     const getdata =()=>{
-        axios.get(`/getAllNews`)
+        axios.get(`https://g-news-qh78.onrender.com/getAllNews`)
         .then((res)=>{
             // console.log(res.data.getNewsByCategory)
             console.log(res.data)

@@ -195,7 +195,7 @@ route.post("/admin/newUserRegistration",adminNewUserRegisteration);
 route.get("/admin/allUsers",getAllUsers)
 
 //user update
-route.put("/admin/editUserFromAdminPanel/:id",updateUserFromAdminPanel)
+route.post("/admin/editUserFromAdminPanel/:id",updateUserFromAdminPanel)
 
 //delete user
 route.delete("/admin/dltUserFromAdminPanel/:id",deleteUserFromAdmimPanel)

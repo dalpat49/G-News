@@ -48,7 +48,7 @@ export default function Register() {
         data.append('password', user.password)
         data.append('image', user.selectedFile)
         axios
-            .post("/registered", data).then(res => {
+            .post("https://g-news-qh78.onrender.com/registered", data).then(res => {
                 // console.log(res);
                 const data = res.data;
                 const { success, msg } = data;

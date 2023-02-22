@@ -27,7 +27,6 @@ const onMouseLeave = (e) => {
         }
       )
       .then((res) => {
-        console.log(res);
         const fNews = res.data;
         setFeaturedNews(fNews.articles);
       });

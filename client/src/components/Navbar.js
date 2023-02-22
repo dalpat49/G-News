@@ -31,7 +31,7 @@ const [loggedIn, setLoggedIn] = useState(false);
 
 
        const logout =()=>{
-        axios.get("/logout")
+        axios.get("https://g-news-qh78.onrender.com/logout")
         .then((res)=>{
             const data = res.data;
             const {success} =  data
@@ -117,7 +117,7 @@ const [loggedIn, setLoggedIn] = useState(false);
             </div>
             
             <SearchBar></SearchBar>
-            {/* <Buttons></Buttons>     */}
+            <Buttons></Buttons>    
            
             <Outlet />
       

@@ -25,12 +25,12 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(cors())
-if(process.env.NODE_ENV ===  'production'){
-    app.get("/",(req,res)=>{
-        res.sendFile(path.join(__dirname , "./client/build/index.html"))
-    })
-}
+app.use(cors({
+    origin:["https://g-news-qh78.onrender.com"]
+}))
+app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+  });
 //routes
 app.use('/',route);
 
