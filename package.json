@@ -6,7 +6,8 @@
   "homepage": ".",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js ",
+    "dev" :"webpack-dev-server --inline --content-base . --history-api-fallback"
   },
   "author": "",
   "license": "ISC",
