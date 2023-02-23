@@ -66,7 +66,7 @@ useEffect(()=>{
     <>
       <main>
     <HashRouter>
-   
+   <Routes>
   
     {/* user routes */}
    
@@ -91,7 +91,7 @@ useEffect(()=>{
          <Route exact  path="/admin/adminProfile" element={<AdminProfile />} />
        
        
-      
+         </Routes>
 
 
       </HashRouter>
