@@ -65,7 +65,6 @@ useEffect(()=>{
   return (
     <>
       <main>
-    <HashRouter>
    <Routes>
   
     {/* user routes */}
@@ -94,7 +93,6 @@ useEffect(()=>{
          </Routes>
 
 
-      </HashRouter>
       </main>
     </>
   );
