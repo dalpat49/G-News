@@ -64,8 +64,8 @@ useEffect(()=>{
 
   return (
     <>
-    <HashRouter>
       <main>
+    <HashRouter>
    
   
     {/* user routes */}
@@ -94,8 +94,8 @@ useEffect(()=>{
       
 
 
-      </main>
       </HashRouter>
+      </main>
     </>
   );
 }
